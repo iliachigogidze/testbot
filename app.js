@@ -48,7 +48,9 @@ bot.dialog('showShirts', function (session) {
             .text("Price is $25 and carried in sizes (S, M, L, and XL)")
             .images([builder.CardImage.create(session, 'http://petersapparel.parseapp.com/img/whiteshirt.png')])
             .buttons([
-                builder.CardAction.imBack(session, "buy classic white t-shirt", "Buy")
+                builder.CardAction.imBack(session, "buy classic white t-shirt", "Buy"),
+                builder.CardAction.imBack(session, "sell classic white t-shirt", "Sell"),
+                builder.CardAction.imBack(session, "change classic white t-shirt", "Change")
             ]),
         new builder.HeroCard(session)
             .title("Classic Gray T-Shirt")
@@ -98,5 +100,5 @@ var intents = new builder.IntentDialog({ recognizers: [recognizer] })
     session.send('Sorry, I did not understand \'%s\'.', session.message.text);
 });
 
-bot.dialog('/', intents);    
+  
 
