@@ -61,6 +61,9 @@ var intents = new builder.IntentDialog({ recognizers: [recognizer] })
 .matches('children', (session) => {
     session.send('ბავშვებისთვის 6 წლიდან ბილეთის ყიდვა აუცილებელია', session.message.text);
 })
+.matches('lost-ticket', (session) => {
+    session.send('თავიდან გამოგიგზავნით', session.message.text);
+})
 /*
 .matches('<yourIntent>')... See details at http://docs.botframework.com/builder/node/guides/understanding-natural-language/
 */
